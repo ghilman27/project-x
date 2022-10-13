@@ -16,11 +16,6 @@ WITH rules AS (
         WHEN LOWER(campaign) LIKE "%bunga3%" THEN "Bunga3%"
         WHEN LOWER(campaign) LIKE "%pestaakhir%" THEN "PestaAkhirTahun"
         WHEN LOWER(campaign) LIKE "%specialpackage%" THEN "Prelaunch"
-        WHEN (LOWER(campaign) LIKE "%sem%") AND (LOWER(campaign) LIKE "%_avanza%")  THEN "Avanza"
-        WHEN (LOWER(campaign) LIKE "%sem%") AND (LOWER(campaign) LIKE "%_ayla%")  THEN "Ayla"
-        WHEN (LOWER(campaign) LIKE "%sem%") AND (LOWER(campaign) LIKE "%_raize%")  THEN "Raize"
-        WHEN (LOWER(campaign) LIKE "%sem%") AND (LOWER(campaign) LIKE "%_sigra%")  THEN "Sigra"
-        WHEN (LOWER(campaign) LIKE "%sem%") AND (LOWER(campaign) LIKE "%_sienta%")  THEN "Sienta"
         ELSE ""
         END AS campaign_group
         , campaign_id
