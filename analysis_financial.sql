@@ -21,3 +21,13 @@ WITH rules AS (
         , campaign_id
     FROM `myproject.mydataset.campaigns`
 )
+
+SELECT
+  cf.date
+  , cr.campaign_group
+  , SUM(cf.cost) as total_cost
+  , SUM(cf.budget) as total_budget
+  , SUM(cf.cost) / SUM(cf.budget) as cost_used_percentage
+FROM `myproject.mydataset.campaign_financial` cf
+  LEFT JOIN campaigns_rule cr
+    ON cr.campaign_id = cf.campaign_id
