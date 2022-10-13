@@ -21,3 +21,13 @@ WITH rules AS (
         , campaign_id
     FROM `myproject.mydataset.campaigns`
 )
+
+SELECT
+  cp.date
+  , cr.campaign_group
+  , SUM(cp.clicks) as total_clicks
+  , SUM(cp.view) as total_view
+  , SUM(cp.clicks) / SUM(cp.view) as click_through_rate
+FROM `myproject.mydataset.campaign_performance` cp
+  LEFT JOIN campaigns_rule cr
+    ON cr.campaign_id = cp.campaign_id
